@@ -1,6 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const postcssPresetEnv = require("postcss-preset-env");
+const webpack = require("webpack");
 
 const { name } = require("../package.json");
 
@@ -11,6 +13,7 @@ module.exports = {
     },
     devServer: {
         port: 1234,
+        hot: true,
         open: true
     },
     devtool: "source-map",
@@ -75,6 +78,8 @@ module.exports = {
         extensions: [".js", ".jsx", ".json", ".less", ".css"]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new ReactRefreshWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: path.join(process.cwd(), "public/index.html")
         })
