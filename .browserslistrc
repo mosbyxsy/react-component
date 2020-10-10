@@ -1,3 +1,5 @@
 # Browsers that we support
+# npx browserslist 查看选择了哪些浏览器
 
-> 0%
+last 4 versions
+# not ie < 9

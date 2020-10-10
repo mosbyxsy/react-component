@@ -1,0 +1,18 @@
+.page {
+  line-height: 20px;
+  animation: textColor 3s infinite;
+}
+
+.page {
+  line-height: 20px;
+  animation: textColor 3s infinite;
+}
+
+@keyframes textColor {
+  0%   {
+    color: #12345678;
+  }
+  100% {
+    color: crimson;
+  }
+}

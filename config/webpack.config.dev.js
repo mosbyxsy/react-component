@@ -22,7 +22,17 @@ module.exports = {
             {
                 test: /\.jsx?/,
                 exclude: /node_modules/,
-                loader: "babel-loader"
+                loader: "babel-loader",
+                options: {
+                    babelrc: false,
+                    presets: [
+                        ["@babel/preset-env"],
+                        "@babel/preset-react"
+                    ],
+                    plugins: [
+                        "react-refresh/babel"
+                    ]
+                }
             },
             {
                 test: /(sc|sa|c)ss$/,
